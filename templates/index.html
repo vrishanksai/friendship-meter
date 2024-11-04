@@ -7,19 +7,17 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #F4F4F4;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
         }
-
         h1 {
             color: #333;
             text-align: center;
         }
-
         form {
             background-color: #fff;
             padding: 20px;
@@ -27,14 +25,12 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
         }
-
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
             color: #555;
         }
-
         input[type="text"] {
             width: 100%;
             padding: 8px;
@@ -43,7 +39,6 @@
             border: 1px solid #ccc;
             font-size: 16px;
         }
-
         button {
             width: 100%;
             padding: 10px;
@@ -54,38 +49,38 @@
             font-size: 16px;
             cursor: pointer;
         }
-
         button:hover {
-            background-color: #45a049;
+            background-color: #45A049;
         }
-
         h2 {
             color: #333;
             text-align: center;
             margin-top: 20px;
             font-size: 24px;
         }
-
-        h1 + h1 {
-            font-size: 24px;
-            color: #4CAF50;
-            margin: 0;
+        .score-section {
+            margin-top: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-   
     <form action="/" method="post">
         <h1>Friendship Meter</h1>
         <label for="name1">Name 1:</label>
         <input type="text" id="name1" name="name1" required>
-        <br><br>
+
         <label for="name2">Name 2:</label>
         <input type="text" id="name2" name="name2" required>
-        <br><br>
+
         <button type="submit">Calculate Score</button>
-        <h1>You're Score is:</h1> 
-        <h2>{{data['score']}}</h2>
     </form>
+
+    {% if data.score %}
+        <div class="score-section">
+            <h1>Your Score is:</h1>
+            <h2>{{ data.score }}</h2>
+        </div>
+    {% endif %}
 </body>
 </html>
